@@ -5,313 +5,175 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teacher Appreciation · the team jar · Growing Mindfully (internal)</title>
+<title>The Star Jar · teacher appreciation · Growing Mindfully (internal)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#FBF7EE; --paper2:#F0E9D8; --ink:#1F2A2E; --ink2:#3F5359; --ink3:#6F7F84;
-    --teal:#5FAEB6; --teal-deep:#3D8189; --sage:#9BB99E; --sage-deep:#6F8F70;
-    --dusty:#7AA8C4; --dusty-deep:#4F7A99; --gold:#C9A86A; --blush:#E8C9B5; --line:#E3D9C2;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0}
+  :root{--paper:#FBF7EE;--paper2:#F0E9D8;--ink:#1F2A2E;--ink2:#3F5359;--ink3:#6F7F84;--teal:#5FAEB6;--teal-deep:#3D8189;--sage-deep:#6F8F70;--dusty-deep:#4F7A99;--gold:#C9A86A;--blush:#E8C9B5;--line:#E3D9C2}
+  *{box-sizing:border-box}html,body{margin:0}
   body{font-family:'Manrope',sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px}
-  a{color:var(--teal-deep)}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-  .wrap{max-width:1000px;margin:0 auto;padding:34px 22px 90px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  header img{height:42px;width:auto}
+  a{color:var(--teal-deep)}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .wrap{max-width:900px;margin:0 auto;padding:30px 22px 80px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  header img{height:40px;width:auto}
   .eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);font-weight:700}
-
-  /* hero: thesis left, the jar right */
-  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;margin:34px 0 10px}
-  h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(34px,5.6vw,54px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;margin:30px 0 0}
+  h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(36px,6vw,58px);line-height:1;margin:0 0 14px;letter-spacing:-.01em}
   h1 em{font-family:'Caveat',cursive;font-style:normal;color:var(--teal-deep)}
-  .lede{font-family:'Newsreader',serif;font-size:clamp(18px,2.3vw,21px);color:var(--ink2);margin:0 0 20px;max-width:34em}
-  .status{display:inline-block;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:13px;color:var(--ink2)}
-  .status b{color:var(--ink)}
-
-  .jar{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px}
-  .jar svg{width:min(100%,320px);height:auto;display:block;filter:drop-shadow(0 10px 22px rgba(31,42,46,.10))}
-  .jar .label{font-family:'Caveat',cursive;font-size:24px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:2px 14px;transform:rotate(-2deg);box-shadow:0 2px 6px rgba(31,42,46,.08)}
-  .tally{display:flex;align-items:center;gap:10px;margin-top:4px}
+  .lede{font-family:'Newsreader',serif;font-size:clamp(18px,2.3vw,22px);color:var(--ink2);margin:0 0 18px;max-width:30em}
+  .status{display:inline-block;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:7px 11px;font-size:13px;color:var(--ink2)}
+  .jar{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .jar svg{width:min(100%,330px);height:auto;display:block;filter:drop-shadow(0 10px 22px rgba(31,42,46,.10))}
+  .jar .label{font-family:'Caveat',cursive;font-size:24px;background:#fff;border:1px solid var(--line);padding:2px 14px;transform:rotate(-2deg);box-shadow:0 2px 6px rgba(31,42,46,.08)}
+  .tally{display:flex;align-items:center;gap:10px}
   .tally button{font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;background:var(--teal-deep);color:#fff;border:0;border-radius:6px;padding:10px 16px;cursor:pointer}
   .tally button.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line)}
   .tally .count{font-family:'Newsreader',serif;font-size:30px;font-weight:600;min-width:2ch;text-align:center}
-  .next{font-size:13.5px;color:var(--ink2);text-align:center;max-width:300px}
-  .next b{color:var(--teal-deep)}
+  .next{font-size:13.5px;color:var(--ink2);text-align:center;max-width:300px}.next b{color:var(--teal-deep)}
   .jarnote{font-size:11.5px;color:var(--ink3);text-align:center}
-  .stone{transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .3s}
-  .stone.hidden{opacity:0;transform:translateY(-140px)}
-  @media (prefers-reduced-motion:reduce){.stone{transition:none}}
-
-  section{margin-top:52px}
-  h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(24px,3.2vw,31px);margin:0 0 6px;line-height:1.15}
-  .sub{color:var(--ink2);margin:0 0 18px;max-width:46em}
-  p{margin:0 0 12px;max-width:46em}
-
-  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .rung{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 16px 14px;position:relative}
-  .rung .k{font-family:'Newsreader',serif;font-size:34px;font-weight:600;color:var(--teal-deep);line-height:1}
-  .rung .k small{font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:6px;font-weight:700}
-  .rung h3{font-family:'Newsreader',serif;font-size:19px;margin:8px 0 4px;font-weight:600}
-  .rung p{font-size:14px;color:var(--ink2);margin:0 0 8px}
-  .rung .cost{font-size:12.5px;color:var(--ink3);font-weight:600}
-  .rung.floor{background:var(--paper2)}
-  .rung.floor .k{color:var(--sage-deep)}
-
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px}
-  .card h3{font-family:'Newsreader',serif;font-size:18px;margin:0 0 6px;font-weight:600}
-  .card p{font-size:14.5px;color:var(--ink2);margin:0}
-  .rail{border-top:4px solid var(--teal)} .rail.r2{border-top-color:var(--sage-deep)} .rail.r3{border-top-color:var(--dusty-deep)}
-  .kill{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
-  .kill span{background:#fff;border:1px solid var(--blush);color:#8a4b2a;border-radius:6px;padding:5px 10px;font-size:13.5px}
-
-  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:8px}
-  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid #EFE8D8;vertical-align:top;font-size:14.5px}
-  th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);background:var(--paper2)}
-  td.h{font-family:'Newsreader',serif;font-size:17px;font-weight:600;white-space:nowrap}
-  td.c{color:var(--ink2)}
-  .pass{color:var(--sage-deep);font-weight:700} .gate{color:#8a4b2a;font-weight:700} .yours{color:var(--dusty-deep);font-weight:700}
-  .tablewrap{overflow-x:auto}
-
-  .steps{counter-reset:s;list-style:none;padding:0;margin:8px 0 0}
-  .steps li{position:relative;padding:0 0 14px 44px;max-width:46em}
-  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;border-radius:50%;background:var(--teal-deep);color:var(--paper);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
-  .steps b{display:block}
-  blockquote{margin:14px 0 0;padding:18px 22px;background:#fff;border:1px solid var(--line);border-radius:6px;font-family:'Newsreader',serif;font-size:18px;color:var(--ink2);font-style:italic;max-width:46em}
-
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-  .decide{background:var(--paper2);border-radius:6px;padding:20px 22px}
-  .decide ol{margin:8px 0 0;padding-left:20px}
-  .decide li{margin-bottom:10px}
-  .rec{color:var(--teal-deep);font-weight:700}
-  .yourwords{background:#fff;border:1px solid var(--line);border-left:4px solid var(--dusty-deep);border-radius:6px;padding:20px 22px}
-  .yourwords ul{margin:8px 0 0;padding-left:20px;font-size:14.5px;color:var(--ink2)}
-  .yourwords li{margin-bottom:6px}
-  .files{font-size:14px;color:var(--ink2)}
-  code{background:var(--paper2);padding:1px 6px;border-radius:4px;font-size:13px}
-  footer{margin-top:50px;font-size:13px;color:var(--ink3)}
-
-  @media (max-width:820px){.hero{grid-template-columns:1fr;gap:26px}.ladder{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
-  @media (max-width:520px){.ladder{grid-template-columns:1fr}.wrap{padding:24px 14px 70px}th,td{padding:9px 9px;font-size:13.5px}}
+  .star{transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .3s}.star.hidden{opacity:0;transform:translateY(-140px)}
+  @media (prefers-reduced-motion:reduce){.star{transition:none}}
+  section{margin-top:46px}
+  h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(24px,3.2vw,30px);margin:0 0 14px;line-height:1.15}
+  .ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .rung{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 14px 12px}
+  .rung .k{font-family:'Newsreader',serif;font-size:36px;font-weight:600;color:var(--teal-deep);line-height:1}
+  .rung .k span{color:var(--gold);font-size:22px;vertical-align:top;margin-left:2px}
+  .rung h3{font-family:'Newsreader',serif;font-size:17px;margin:8px 0 3px;font-weight:600}
+  .rung p{font-size:13.5px;color:var(--ink2);margin:0 0 6px;line-height:1.4}
+  .rung .cost{font-size:12px;color:var(--ink3);font-weight:600}
+  .rung.grand{background:var(--ink);border-color:var(--ink)}.rung.grand .k,.rung.grand h3{color:var(--paper)}.rung.grand .k span{color:var(--gold)}.rung.grand p{color:#C9D3D6}.rung.grand .cost{color:#9FB0B5}
+  .after{font-size:14px;color:var(--ink2);margin:12px 0 0;max-width:46em}
+  .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .rule{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:6px;padding:14px 16px}
+  .rule.r2{border-top-color:var(--sage-deep)}.rule.r3{border-top-color:var(--dusty-deep)}
+  .rule h3{font-family:'Newsreader',serif;font-size:18px;margin:0 0 4px;font-weight:600}
+  .rule p{font-size:14px;color:var(--ink2);margin:0}
+  .plain{max-width:46em;color:var(--ink2);margin:0 0 10px}.plain b{color:var(--ink)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .decide{background:var(--paper2);border-radius:6px;padding:18px 20px}
+  .decide ol{margin:6px 0 0;padding-left:20px}.decide li{margin-bottom:8px}.rec{color:var(--teal-deep);font-weight:700}
+  .links{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+  .links ul{margin:6px 0 0;padding-left:18px;font-size:14.5px;color:var(--ink2)}.links li{margin-bottom:5px}
+  footer{margin-top:44px;font-size:13px;color:var(--ink3)}
+  @media (max-width:820px){.hero{grid-template-columns:1fr;gap:24px}.ladder{grid-template-columns:repeat(2,1fr)}.rules,.two{grid-template-columns:1fr}}
+  @media (max-width:520px){.ladder{grid-template-columns:1fr}.wrap{padding:22px 14px 60px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <img src="assets/wordmark.png" alt="Growing Mindfully">
-    <span class="eyebrow">Internal · Jarred and Ashley · program design · 2026-09-02</span>
+    <span class="eyebrow">Internal · Jarred and Ashley · 2026-09-02</span>
   </header>
 
   <div class="hero">
     <div>
-      <h1>Teacher appreciation,<br>run out of <em>one jar</em></h1>
-      <p class="lede">Every positive review a family leaves for the school adds a stone. When the jar reaches a mark, the whole team gets treated, and Jarred or Ashley delivers it on a Friday. That is the entire program.</p>
-      <div class="status"><b>Status: design.</b> Nothing launched, no family message sent. Your announcement to the team is yours to write. Text version: <a href="PROGRAM.html">the full program text</a>.</div>
+      <h1>The <em>star jar</em></h1>
+      <p class="lede">A family leaves a positive review, a star goes in the jar. Five marks on the jar, five celebrations, the first one almost right away. Jarred or Ashley hands it out on a Friday.</p>
+      <div class="status"><b>Status: design.</b> Nothing launched. Full detail: <a href="PROGRAM.html">the program text</a>.</div>
     </div>
-
-    <div class="jar" aria-label="Team jar tally">
-      <svg viewBox="0 0 260 340" role="img" aria-labelledby="jt">
-        <title id="jt">The team jar with milestone marks at 5, 10 and 25 stones</title>
+    <div class="jar" aria-label="Star jar tally">
+      <svg viewBox="0 0 270 340" role="img" aria-labelledby="jt">
+        <title id="jt">The star jar with marks at 1, 3, 5, 10 and 25 stars</title>
         <defs><clipPath id="body"><path d="M52 92 Q40 92 40 104 V300 Q40 322 62 322 H198 Q220 322 220 300 V104 Q220 92 208 92 Z"/></clipPath></defs>
-        <!-- lid -->
         <rect x="58" y="40" width="144" height="26" rx="6" fill="#B9AE93"/>
         <rect x="50" y="62" width="160" height="22" rx="5" fill="#CFC5A8"/>
-        <!-- glass -->
         <path d="M52 92 Q40 92 40 104 V300 Q40 322 62 322 H198 Q220 322 220 300 V104 Q220 92 208 92 Z" fill="#fff" stroke="#D8D0BC" stroke-width="2"/>
-        <g id="stones" clip-path="url(#body)"></g>
-        <!-- glass highlight -->
+        <g id="stars" clip-path="url(#body)"></g>
         <path d="M60 120 Q56 200 62 290" stroke="#fff" stroke-opacity=".9" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <!-- milestone marks (right side) -->
-        <g font-family="Manrope,sans-serif" font-size="11" font-weight="700" fill="#6F7F84">
-          <line x1="222" y1="276" x2="236" y2="276" stroke="#C9A86A" stroke-width="2"/><text x="240" y="280">5 · coffee</text>
-          <line x1="222" y1="230" x2="236" y2="230" stroke="#C9A86A" stroke-width="2"/><text x="240" y="234">10 · lunch</text>
-          <line x1="222" y1="104" x2="236" y2="104" stroke="#C9A86A" stroke-width="2"/><text x="240" y="108">25 · catered</text>
+        <g font-family="Manrope,sans-serif" font-size="10.5" font-weight="700" fill="#6F7F84">
+          <line x1="222" y1="313" x2="234" y2="313" stroke="#C9A86A" stroke-width="2"/><text x="238" y="317">1 · coffee</text>
+          <line x1="222" y1="296" x2="234" y2="296" stroke="#C9A86A" stroke-width="2"/><text x="238" y="300">3 · Starbucks</text>
+          <line x1="222" y1="278" x2="234" y2="278" stroke="#C9A86A" stroke-width="2"/><text x="238" y="282">5 · lunch</text>
+          <line x1="222" y1="235" x2="234" y2="235" stroke="#C9A86A" stroke-width="2"/><text x="238" y="239">10 · catered</text>
+          <line x1="222" y1="104" x2="234" y2="104" stroke="#C9A86A" stroke-width="2"/><text x="238" y="108">25 · grand</text>
         </g>
       </svg>
-      <div class="label">the team jar</div>
-      <div class="tally">
-        <button class="ghost" id="minus" aria-label="Remove one stone">−</button>
-        <div class="count" id="count">0</div>
-        <button id="plus" aria-label="Add one stone">+ stone</button>
-      </div>
+      <div class="label">the star jar</div>
+      <div class="tally"><button class="ghost" id="minus" aria-label="Remove one star">−</button><div class="count" id="count">0</div><button id="plus" aria-label="Add one star">+ star</button></div>
       <div class="next" id="next"></div>
-      <div class="jarnote">Tally lives in this browser only. The real jar is the one in the staff room.</div>
+      <div class="jarnote">Tally lives in this browser only. The real jar is in the staff room.</div>
     </div>
   </div>
 
   <section>
-    <h2>The ladder</h2>
-    <p class="sub">Cumulative, never resets. Milestones pay out as they are reached. Costs are for the whole 23-person team, scaling toward 30.</p>
+    <h2>Five marks, five celebrations</h2>
     <div class="ladder">
-      <div class="rung"><div class="k"><small>every</small>5</div><h3>Starbucks run</h3><p>Jarred takes orders the day before, delivers Friday morning.</p><div class="cost">$140-180</div></div>
-      <div class="rung"><div class="k"><small>every</small>10</div><h3>Bought lunch</h3><p>Sandwich or pizza platters, or Ashley cooks. The team eats in shifts.</p><div class="cost">$250-350</div></div>
-      <div class="rung"><div class="k"><small>every</small>25</div><h3>Catered, plus</h3><p>Jarred and Ashley cover rooms so the team eats together in two shifts, plus something the team picks.</p><div class="cost">$500-700</div></div>
-      <div class="rung floor"><div class="k"><small>always</small>1/mo</div><h3>The floor</h3><p>One team treat a month no matter what the jar did. Reviews change the flavor, never whether.</p><div class="cost">Starbucks tier · recommended</div></div>
+      <div class="rung"><div class="k">1<span>★</span></div><h3>Coffee and pastries</h3><p>The first win, celebrated the same week.</p><div class="cost">$80-100</div></div>
+      <div class="rung"><div class="k">3<span>★</span></div><h3>Starbucks run</h3><p>Everyone's order, Jarred delivers Friday morning.</p><div class="cost">$140-180</div></div>
+      <div class="rung"><div class="k">5<span>★</span></div><h3>Bought lunch</h3><p>Platters, or Ashley cooks. Team eats in shifts.</p><div class="cost">$250-350</div></div>
+      <div class="rung"><div class="k">10<span>★</span></div><h3>Catered lunch</h3><p>Jarred and Ashley cover rooms so the team eats together.</p><div class="cost">$400-500</div></div>
+      <div class="rung grand"><div class="k">25<span>★</span></div><h3>Grand prize</h3><p>Team dinner out, or a gift card each. Jarred's call.</p><div class="cost">$1,000-2,000</div></div>
     </div>
-    <p style="margin-top:14px;font-size:14.5px;color:var(--ink2)">Time gifts cost nothing and rank highest with tired ECE staff: "Jarred covers your room for an hour" and "leave 30 minutes early Friday, staggered" stay on the <a href="wheel.html">Friday wheel</a> as bonus prizes, one classroom at a time so ratios hold. At the realistic pace (4-8 reviews a month) the whole thing runs <b>$250-450 a month, $3-5k a year</b>: a fixed appreciation line, not performance pay.</p>
+    <p class="after">After the grand prize the jar empties and the ladder starts over, so the small wins keep coming. Costs are for the whole team of 23. Time gifts (Jarred covers your room an hour, leave early Friday) ride along on the <a href="wheel.html">Friday wheel</a> for free.</p>
   </section>
 
   <section>
-    <h2>What counts as a stone</h2>
-    <div class="cards">
-      <div class="card"><h3>One review, one stone</h3><p>A new 4 or 5 star review on Google or Yelp from any family: new, current, or alumni. No bonus for length, no bonus for naming a teacher. That is what keeps the first rail honest.</p></div>
-      <div class="card"><h3>Never clawed back</h3><p>If a platform later filters or removes a review, the stone stays.</p></div>
-      <div class="card"><h3>Private notes</h3><p>A thank-you note or Brightwheel message does not go in the jar, so the count stays legible, but it gets read aloud at the huddle all the same.</p></div>
-      <div class="card"><h3>A hard review</h3><p>Adds nothing, costs nothing. Jarred replies within 2 business days. The team hears the need, names one thing to try, no blame. The next treat proceeds unchanged.</p></div>
+    <h2>Three rules</h2>
+    <div class="rules">
+      <div class="rule"><h3>Teachers never ask</h3><p>Only Jarred or Ashley ever mention Google to a family. Teachers never ask for a review, never ask to be named, never mention the jar.</p></div>
+      <div class="rule r2"><h3>Families are never told</h3><p>They get a warm thank-you and a link. Never "your review buys the team lunch."</p></div>
+      <div class="rule r3"><h3>Yelp is never asked</h3><p>Yelp reviews that arrive on their own count. We reply to every one and never solicit there.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>The three rails</h2>
-    <p class="sub">The July research (78 sources, 6-model counsel panel) found the risky shape is paying individual employees per five-star review, or having staff solicit. A team lunch at a milestone is not that. What could make it risky is behavior leaking outward, so three rules carry the legal weight.</p>
-    <div class="cards">
-      <div class="card rail"><h3>Teachers never ask</h3><p>Only Jarred or Ashley ever mention Google to a family or send a link. Teachers never ask for a review, never ask to be named, never mention the jar or the treats to a family. Google bans staff review quotas and asking reviews to name staff; Yelp bans asking at all.</p></div>
-      <div class="card rail r2"><h3>Families are never told</h3><p>The invitation is a neutral thank-you plus a link. Six of six counsel models called "your review funds staff treats" a mistake: it reads as an incentive and invites platform and FTC scrutiny.</p></div>
-      <div class="card rail r3"><h3>Yelp is never asked</h3><p>Yelp reviews that arrive on their own count. We respond to every Yelp review, keep photos fresh, and never solicit there.</p></div>
-    </div>
-    <p style="margin-top:14px;font-size:14px;color:var(--ink2)">If any of these show up in a family-facing sentence, pause the asks and reset:</p>
-    <div class="kill"><span>"five stars" / "5-star"</span><span>"mention Ms. or Mr. [teacher]"</span><span>"it helps the teachers get lunch"</span><span>"leave us a Yelp review"</span><span>any batch blast of review links</span></div>
-  </section>
-
-  <section>
-    <h2>Where the reviews come from</h2>
-    <p class="sub">Neutral asks at a steady pace, from Jarred or Ashley only, plus whatever arrives on its own. New families and old ones both get one.</p>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Who</th><th>When</th><th>Placement</th></tr></thead>
-      <tbody>
-        <tr><td class="h">New families</td><td class="c">About 60-90 days after start, once there is a real experience to describe.</td><td class="c">Cohort email, placement 4</td></tr>
-        <tr><td class="h">Departing and alumni</td><td class="c">The child's last week, or the kindergarten send-off. Departures are the emotional peak; this is where the "old" experiences live. Never after a difficult departure.</td><td class="c">Farewell email, placement 5 (new)</td></tr>
-        <tr><td class="h">Everyone else</td><td class="c">Enrollment-anniversary cohorts, about one a week. <code>metronome/cohort-metronome.sh</code> prints the week's list from the Solace mirror, read only.</td><td class="c">Cohort email, placement 4</td></tr>
-        <tr><td class="h">All families, once</td><td class="c">Week 2 of launch, one Brightwheel post. The lobby sign and story cards carry the same words with no link, so nobody is asked on premises.</td><td class="c">Placements 1 and 3</td></tr>
-      </tbody>
-    </table></div>
-    <p style="margin-top:12px;font-size:14.5px;color:var(--ink2)"><b>Rules:</b> one ask per family per 12 months; non-responders are left in peace; no filtering by how happy a family seems (that is review gating); individually addressed from jarred@growingmindfully.org, never BCC; every send approved by Jarred per message, nothing automates a send. <b>Circuit breaker:</b> three or more new Google reviews within any 7 days pauses outbound invitations for 14 days. Google freezes profiles on velocity spikes; too fast is a warning, not a win.</p>
-    <p style="font-size:14px;color:var(--ink2);margin-top:14px">The only family-facing text, counsel-approved 5 of 6, used verbatim in every placement:</p>
-    <blockquote>At Growing Mindfully, we try to notice the small moments that shape a child's day. If something has stayed with you, whether it felt joyful, difficult, or somewhere in between, we would be grateful to hear it. You can share privately with Ashley or Jarred, or leave an honest Google review if you would rather share publicly. Every story helps us listen, learn, and care for our community more thoughtfully.</blockquote>
+    <h2>How stars arrive</h2>
+    <p class="plain"><b>A star</b> is any new 4 or 5 star review on Google or Yelp, from any family, new or alumni. One review, one star. Never taken back.</p>
+    <p class="plain"><b>The ask</b> is one warm email from Jarred, once per family per year: new families at 60-90 days, leaving families in their last week, everyone else on their enrollment anniversary. Same paragraph every time, one link, individually sent, Jarred approves each one. If reviews spike (3+ in a week), asks pause two weeks.</p>
+    <p class="plain"><b>Friday</b> takes five minutes: read the new reviews aloud, drop the stars, hand out whatever mark was hit. A hard review costs the team nothing; Jarred replies to the family within two days.</p>
   </section>
 
   <section class="two">
-    <div>
-      <h2>Friday, five minutes</h2>
-      <ol class="steps">
-        <li><b>Read and drop</b> Jarred or Ashley reads this week's new reviews aloud (the warm parts) and drops the stones in.</li>
-        <li><b>Milestone</b> If one was hit, announce the treat and schedule it, or it is already sitting there.</li>
-        <li><b>Wheel, optional</b> Spin for the flavor or a bonus time gift. The wheel page says nothing about reviews.</li>
-        <li><b>Hard review</b> The need, one thing to try, no blame, treat unchanged.</li>
-      </ol>
-    </div>
-    <div>
-      <h2>Launch</h2>
-      <ol class="steps">
-        <li><b>Week 1</b> Jarred announces at a huddle and hands out the first Starbucks run before explaining anything. 27 existing reviews' worth of goodwill seeds the jar.</li>
-        <li><b>Week 2</b> The paragraph goes out once via Brightwheel after Jarred approves the send. Lobby sign and cards go up if he approves printing.</li>
-        <li><b>Week 3 on</b> Friday rhythm runs. Cohort and farewell invitations begin, breaker armed.</li>
-        <li><b>Month 3</b> Stones collected, floor honored every month, response times, and a language check against the kill phrases.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section>
-    <h2>Collateral and compliance</h2>
-    <p class="sub">Every artifact, who sees it, and where it stands. <code>compliance-lint.sh</code> checks the family-facing set for the kill phrases, em dashes, licensing references, on-premises links, and the paragraph verbatim; it passes as of this build.</p>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Artifact</th><th>Audience</th><th>Rails checked</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td class="h"><a href="print/lobby-sign.html">Lobby sign</a> 8.5x11</td><td class="c">Families, on premises</td><td class="c">No link or QR, no stars, no treats, no Yelp, paragraph verbatim</td><td class="gate">Gated: print on Jarred's approval</td></tr>
-        <tr><td class="h"><a href="print/story-cards.html">Story cards</a> 4-up</td><td class="c">Families, on premises</td><td class="c">No mention of reviews at all; consent choices only</td><td class="gate">Gated: print on Jarred's approval</td></tr>
-        <tr><td class="h"><a href="copy/staged-family-copy.html">Family emails</a> placements 1-5</td><td class="c">Families, off premises</td><td class="c">Paragraph verbatim, one link, individually addressed, 1 ask/12 mo, farewell never after a difficult exit</td><td class="gate">Gated: every send approved per message</td></tr>
-        <tr><td class="h"><a href="copy/staged-family-copy.html">Review replies</a></td><td class="c">Public</td><td class="c">Written fresh, name the moment not the stars, never mention the program, never ask for a rating change</td><td class="gate">Jarred writes each reply</td></tr>
-        <tr><td class="h"><a href="wheel.html">Friday wheel</a></td><td class="c">Team, in the huddle (the one public file)</td><td class="c">Names treats only; no reviews, Google, stories, or stars anywhere on it</td><td class="pass">Ready</td></tr>
-        <tr><td class="h"><a href="print/operator-card.html">Operator card</a> 5x7</td><td class="c">Jarred and Ashley only, office</td><td class="c">Huddle order, ladder, send rules, breaker, kill phrases</td><td class="pass">Ready to print</td></tr>
-        <tr><td class="h">Staff announcement</td><td class="c">Teachers</td><td class="c">See "In your words" below</td><td class="yours">Jarred writes it</td></tr>
-        <tr><td class="h">Staff-room jar sign</td><td class="c">Teachers</td><td class="c">New staff-visible surface</td><td class="yours">Only to content Jarred directs</td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <section class="two">
-    <div class="yourwords">
-      <h2>In your words</h2>
-      <p style="font-size:14.5px;color:var(--ink2)">The team announcement is not drafted here. For it to stay inside the rails, it needs to carry these five things, however you say them:</p>
-      <ul>
-        <li>The jar and the ladder: what fills it, what it pays out, that it never resets, and that the floor is guaranteed.</li>
-        <li>The one rule teachers own: never ask a family for a review, never ask to be named, never mention the jar or the treats to a family. Everything about asking is yours and Ashley's.</li>
-        <li>A hard review costs the team nothing.</li>
-        <li>The first treat is already in hand (hand it out before you explain).</li>
-        <li>Yelp is off the table for everyone, including friends and family of staff.</li>
-      </ul>
-    </div>
     <div class="decide">
       <h2>Your call</h2>
       <ol>
-        <li><b>Star bar.</b> 5-star only, or 4-5? <span class="rec">Recommend 4-5:</span> a 4-star with a warm story is still a positive experience, and counting it removes any reason to fish for the fifth star.</li>
-        <li><b>Ladder</b> 5 / 10 / 25 and the monthly floor: keep or adjust.</li>
-        <li><b>Staff-room jar sign.</b> Yes or no, and if yes, the words.</li>
-        <li><b>Week 1 huddle date.</b></li>
+        <li><b>Grand prize:</b> team dinner out, gift card each, or something else.</li>
+        <li><b>Star bar:</b> 5-star only, or 4 and 5? <span class="rec">Recommend 4 and 5.</span></li>
+        <li><b>Staff-room jar sign:</b> yes or no, and if yes, your words.</li>
+        <li><b>Week 1 huddle date.</b> You announce it in your own words; the first star will land within days.</li>
       </ol>
-      <p style="font-size:13.5px;color:var(--ink2);margin:10px 0 0">Tracked on <a href="https://app.clickup.com/t/z956jervuv">ClickUp z956jervuv</a>, due Sep 22. Worth building once decided: a weekly new-review digest so no stone is missed.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>Everything on this board</h2>
-    <p class="sub">Every artifact in one place. Print files open as PDF at letter size; the HTML versions are the editable originals.</p>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Artifact</th><th>Open</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td class="h">Program overview</td><td class="c"><a href="index.html">this page</a></td><td class="c">The design in one screen, with the tally jar.</td></tr>
-        <tr><td class="h">Program design, full text</td><td class="c"><a href="PROGRAM.html">PROGRAM</a></td><td class="c">Every rule, the ladder, the ask track, the collateral table, the legal footnote.</td></tr>
-        <tr><td class="h">Lobby sign</td><td class="c"><a href="print/lobby-sign.pdf">PDF</a> · <a href="print/lobby-sign.html">HTML</a></td><td class="c">8.5x11. Family-facing, gated: print on Jarred's approval.</td></tr>
-        <tr><td class="h">Story cards</td><td class="c"><a href="print/story-cards.pdf">PDF</a> · <a href="print/story-cards.html">HTML</a></td><td class="c">4-up on letter, cut on the dashed lines. Family-facing, gated.</td></tr>
-        <tr><td class="h">Operator card</td><td class="c"><a href="print/operator-card.pdf">PDF</a> · <a href="print/operator-card.html">HTML</a></td><td class="c">5x7 for Jarred and Ashley. Office only, not the staff room.</td></tr>
-        <tr><td class="h">Family emails and review replies</td><td class="c"><a href="copy/staged-family-copy.html">staged copy</a></td><td class="c">Placements 1-5 including the departing/alumni farewell. Every send approved per message.</td></tr>
-        <tr><td class="h">Friday wheel</td><td class="c"><a href="wheel.html">spin it</a></td><td class="c">Team prize spinner. Discloses nothing about reviews.</td></tr>
-        <tr><td class="h">July research report</td><td class="c"><a href="reference/research-report.html">report</a></td><td class="c">78 sources, 175 claims, codex-adjudicated. The evidence behind the three rails.</td></tr>
-        <tr><td class="h">July counsel synthesis</td><td class="c"><a href="reference/counsel-synthesis.html">synthesis</a></td><td class="c">6-model, 4-round panel: what was kept, what was killed, the paragraph vote.</td></tr>
-        <tr><td class="h">July operating guide</td><td class="c"><a href="reference/july-operating-guide.html">superseded</a></td><td class="c">The heavier Community Moments design this program replaced.</td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <section>
-    <h2>Legal footnote, plain</h2>
-    <p>FTC 16 CFR 465 restricts incentives to reviewers conditioned on sentiment, undisclosed insider reviews, and review suppression. It does not squarely address an internal team-appreciation program, and the July research found no enforcement action either way. Exposure comes from behavior leaking outward, which the three rails close. Penalties, for scale, run up to $53,088 per violation. Staff and family members must not post reviews without a disclosed relationship.</p>
-    <p class="files"><code>PROGRAM.md</code> full design · <code>compliance-lint.sh</code> · <code>print/</code> lobby sign, story cards, operator card · <code>copy/staged-family-copy.md</code> · <code>metronome/</code> cohort picker · <code>reference/</code> July research report, counsel synthesis, and the heavier July design this supersedes · <code>functions/_middleware.js</code> blocks this directory except wheel.html.</p>
+    <div class="links">
+      <h2>Files</h2>
+      <ul>
+        <li><a href="PROGRAM.html">Program text</a>: every rule, the legal footnote, the ask schedule.</li>
+        <li><a href="print/lobby-sign.pdf">Lobby sign</a> (<a href="print/lobby-sign.html">html</a>) and <a href="print/story-cards.pdf">story cards</a> (<a href="print/story-cards.html">html</a>): family-facing, print on your approval.</li>
+        <li><a href="copy/staged-family-copy.html">Family emails</a>: the paragraph, five placements, reply rules. Every send approved.</li>
+        <li><a href="print/operator-card.pdf">Operator card</a> (<a href="print/operator-card.html">html</a>): the Friday checklist for you and Ashley.</li>
+        <li><a href="wheel.html">Friday wheel</a>: the team spinner.</li>
+        <li><a href="reference/research-report.html">July research</a> and <a href="reference/counsel-synthesis.html">counsel synthesis</a>: why the three rules.</li>
+      </ul>
+    </div>
   </section>
 
   <footer>Growing Mindfully · internal program design · not served publicly.</footer>
 </div>
 <script>
 (function(){
-  var KEY='gm-team-jar-stones', MAX=25;
-  var g=document.getElementById('stones'), countEl=document.getElementById('count'), nextEl=document.getElementById('next');
-  var colors=['#C9A86A','#9BB99E','#7AA8C4','#E8C9B5','#5FAEB6','#B9AE93'];
-  // 25 stone slots laid bottom-up inside the jar body (x 40-220, y 104-322), 5 per row, hand-jittered.
+  var KEY='gm-star-jar', CYCLE=25, MARKS=[[1,'coffee and pastries'],[3,'Starbucks run'],[5,'bought lunch'],[10,'catered lunch'],[25,'the grand prize']];
+  var g=document.getElementById('stars'), countEl=document.getElementById('count'), nextEl=document.getElementById('next');
+  var colors=['#C9A86A','#D4B77A','#C9A86A','#E0C88F','#C9A86A','#B8975A'];
   var slots=[];
   for(var r=0;r<5;r++){for(var c=0;c<5;c++){
     var x=64+c*33+((r%2)?12:0)+((r*7+c*13)%9-4), y=306-r*44-((r*5+c*3)%7-3);
-    slots.push({x:x,y:y,rx:15+((r+c)%3),ry:12+((r*c)%3),rot:((r*31+c*17)%40)-20,fill:colors[(r*5+c)%colors.length]});
+    slots.push({x:x,y:y,s:13+((r+c)%3),rot:((r*31+c*17)%50)-25,fill:colors[(r*5+c)%colors.length]});
   }}
+  function starPath(cx,cy,R){var r=R*.46,p='';for(var i=0;i<10;i++){var a=Math.PI/2+i*Math.PI/5,rad=(i%2?r:R);p+=(i?'L':'M')+(cx+Math.cos(a)*rad).toFixed(1)+' '+(cy-Math.sin(a)*rad).toFixed(1);}return p+'Z';}
   function read(){var n=parseInt(localStorage.getItem(KEY)||'0',10);return isNaN(n)?0:Math.max(0,Math.min(999,n));}
-  function nextMark(n){var m=n%25; if(m<5)return {at:5-m,what:'Starbucks run'}; if(m<10)return {at:10-m,what:'bought lunch'}; return {at:25-m,what:'catered lunch, plus'};}
   function render(n){
     countEl.textContent=n;
-    var shown=n%25; if(n>0&&shown===0)shown=25;
+    var cyc=n%CYCLE, shown=(n>0&&cyc===0)?CYCLE:cyc;
     while(g.firstChild)g.removeChild(g.firstChild);
-    for(var i=0;i<shown;i++){var s=slots[i];
-      var e=document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-      e.setAttribute('cx',s.x);e.setAttribute('cy',s.y);e.setAttribute('rx',s.rx);e.setAttribute('ry',s.ry);
-      e.setAttribute('fill',s.fill);e.setAttribute('transform','rotate('+s.rot+' '+s.x+' '+s.y+')');e.setAttribute('class','stone');
-      g.appendChild(e);}
-    var nm=nextMark(n);
-    nextEl.innerHTML= n===0 ? 'Empty jar. The first Starbucks run is on the house at launch.' : '<b>'+nm.at+' more</b> to the next mark: '+nm.what+'.'+(n>0&&n%5===0?' <b>Milestone hit.</b>':'');
+    for(var i=0;i<shown;i++){var s=slots[i];var e=document.createElementNS('http://www.w3.org/2000/svg','path');
+      e.setAttribute('d',starPath(s.x,s.y,s.s));e.setAttribute('fill',s.fill);e.setAttribute('transform','rotate('+s.rot+' '+s.x+' '+s.y+')');e.setAttribute('class','star');g.appendChild(e);}
+    if(n===0){nextEl.innerHTML='Empty jar. <b>The first star</b> means coffee and pastries.';return;}
+    if(cyc===0){nextEl.innerHTML='<b>Grand prize hit.</b> The jar empties and the ladder starts over.';return;}
+    var hit=null,next=null;for(var k=0;k<MARKS.length;k++){if(MARKS[k][0]===cyc)hit=MARKS[k][1];if(!next&&MARKS[k][0]>cyc)next=MARKS[k];}
+    nextEl.innerHTML=(hit?'<b>Mark hit:</b> '+hit+'. ':'')+'<b>'+(next[0]-cyc)+' more</b> to '+next[1]+'.';
   }
-  document.getElementById('plus').addEventListener('click',function(){var n=read()+1;localStorage.setItem(KEY,n);render(n);
-    var last=g.lastChild; if(last){last.classList.add('hidden');requestAnimationFrame(function(){requestAnimationFrame(function(){last.classList.remove('hidden');});});}});
+  document.getElementById('plus').addEventListener('click',function(){var n=read()+1;localStorage.setItem(KEY,n);render(n);var last=g.lastChild;if(last){last.classList.add('hidden');requestAnimationFrame(function(){requestAnimationFrame(function(){last.classList.remove('hidden');});});}});
   document.getElementById('minus').addEventListener('click',function(){var n=Math.max(0,read()-1);localStorage.setItem(KEY,n);render(n);});
   render(read());
 })();
