@@ -29,12 +29,13 @@
   .foot{position:absolute;bottom:.32in;left:0;right:0;text-align:center;font-size:.24in;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);font-weight:700}
   .screen-note{position:fixed;left:16px;bottom:16px;background:#fff;border:1px solid #E3D9C2;border-left:5px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--ink2);max-width:420px;line-height:1.45;box-shadow:0 6px 18px rgba(31,42,46,.12)}
   @media print{html,body{background:#fff}body{padding:0}.poster{box-shadow:none;transform:none!important}.screen-note{display:none}}
+  .tam{font-size:.22in;letter-spacing:.22em;text-transform:uppercase;color:#6F7F84;font-weight:700;margin-bottom:.08in}
 </style>
 </head>
 <body>
 <!-- STAFF-ROOM POSTER. Prints 24x36 at FedEx Office or any poster printer. 25 slots sized for the 4x6 review cards (print/review-cards.html). No words addressed to staff beyond the slot numbers and the five marks. If a LOBBY version is ever wanted, remove the marks: families must never see reviews paired with rewards. -->
 <div class="poster" id="poster">
-  <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully">
+  <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully"><div class="tam">Teacher Appreciation Month</div>
   <h1>the review wall</h1>
   <div class="sub">In our families' words, one card per review.</div>
   <div class="grid" id="grid"></div>
@@ -43,7 +44,7 @@
 <div class="screen-note">Shown scaled to fit the screen. Prints at 24x36 (poster printer, matte or foam-mounted). Each dashed slot holds one 4x6 review card; the five outlined slots are the marks.</div>
 <script>
 (function(){
-  var marks={1:'coffee and pastries',3:'Starbucks run',5:'lunch',10:'catered lunch',25:'grand prize'};
+  var marks={1:'coffee',3:'Starbucks',5:'lunch',8:'boba',10:'catered',12:'early Friday',15:'gift cards',20:'Ashley cooks',25:'grand prize'};
   var g=document.getElementById('grid');
   for(var i=1;i<=25;i++){
     var d=document.createElement('div'); d.className='slot'+(marks[i]?' m':'');

@@ -21,12 +21,13 @@
   .foot{position:absolute;bottom:.35in;left:0;right:0;text-align:center;font-size:.2in;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);font-weight:700}
   .screen-note{position:fixed;left:16px;bottom:16px;background:#fff;border:1px solid #E3D9C2;border-left:5px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--ink2);max-width:420px;line-height:1.45;box-shadow:0 6px 18px rgba(31,42,46,.12)}
   @media print{html,body{background:#fff}body{padding:0}.poster{box-shadow:none;transform:none!important}.screen-note{display:none}}
+  .tam{font-size:.22in;letter-spacing:.22em;text-transform:uppercase;color:#6F7F84;font-weight:700;margin-bottom:.08in}
 </style>
 </head>
 <body>
 <!-- STAFF-ROOM POSTER (physical). 18x24. A big jar with 25 star spots inside; one gold star sticker (or color it in) per review; the five marks on the side of the jar. No words addressed to staff beyond the numbers and marks. -->
 <div class="poster" id="poster">
-  <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully">
+  <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully"><div class="tam">Teacher Appreciation Month</div>
   <h1>the star jar</h1>
   <svg class="jar" viewBox="0 0 1000 1200" role="img" aria-label="A large jar outline with twenty-five numbered star spots inside and five marks on the side">
     <defs><path id="st" d="M0 -34 L10 -10.5 L35.7 -10.5 L14.9 4.9 L22.6 29.5 L0 14.7 L-22.6 29.5 L-14.9 4.9 L-35.7 -10.5 L-10 -10.5 Z"/></defs>
@@ -45,7 +46,7 @@
 <div class="screen-note">Shown scaled to fit the screen. Prints at 18x24. One gold star sticker per review on the numbered spots (bottom up); the five outlined spots are the marks.</div>
 <script>
 (function(){
-  var marks={1:'coffee',3:'Starbucks',5:'lunch',10:'catered',25:'grand prize'};
+  var marks={1:'coffee',3:'Starbucks',5:'lunch',8:'boba',10:'catered',12:'early Friday',15:'gift cards',20:'Ashley cooks',25:'grand prize'};
   var g=document.getElementById('spots'), nm=document.getElementById('nums'), mk=document.getElementById('marks');
   // 5 rows x 5, bottom-up, inside the jar body (x 300-700, y 260-1080), hand-jittered
   var n=0, rows=5, cols=5, x0=340, dx=80, yBottom=1010, dy=170;
