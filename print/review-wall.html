@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Review wall poster, 24x36, 25 card slots · Growing Mindfully</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600&family=Manrope:wght@500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  @page{size:24in 36in;margin:0}
+  :root{--paper:#FBF7EE;--paper2:#F0E9D8;--ink:#1F2A2E;--ink2:#3F5359;--ink3:#6F7F84;--teal-deep:#3D8189;--gold:#C9A86A;--line:#D8D0BC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#d9d3c4}
+  body{font-family:'Manrope',sans-serif;color:var(--ink);display:flex;justify-content:center;padding:24px}
+  /* The poster is laid out in inches and scaled to fit the screen; print is 1:1 via @page. */
+  .poster{width:24in;height:36in;background:var(--paper);padding:1.4in 1.5in 1.2in;display:flex;flex-direction:column;align-items:center;position:relative;box-shadow:0 10px 40px rgba(31,42,46,.2);transform-origin:top center}
+  .wordmark{width:6in;height:auto;margin-bottom:.35in}
+  h1{font-family:'Caveat',cursive;font-weight:600;font-size:1.5in;color:var(--teal-deep);line-height:1;margin-bottom:.15in}
+  .sub{font-family:'Newsreader',serif;font-size:.42in;color:var(--ink2);margin-bottom:.7in}
+  .grid{display:grid;grid-template-columns:repeat(5,4in);grid-template-rows:repeat(5,6in);gap:.35in .25in}
+  .slot{border:3px dashed var(--line);border-radius:.12in;position:relative;background:#fff}
+  .slot .n{position:absolute;top:.14in;left:.18in;font-family:'Newsreader',serif;font-size:.5in;font-weight:600;color:#C4BBA5;line-height:1}
+  .slot .mark{position:absolute;bottom:.16in;left:0;right:0;text-align:center;font-family:'Caveat',cursive;font-size:.42in;color:var(--teal-deep);line-height:1}
+  .slot .star{position:absolute;top:.12in;right:.16in;font-size:.5in;color:#E4D7B5;line-height:1}
+  .slot.m{border:4px solid var(--teal-deep);background:#fff}
+  .slot.m .n{color:var(--teal-deep)}.slot.m .star{color:var(--gold)}
+  .foot{position:absolute;bottom:.55in;left:0;right:0;text-align:center;font-size:.24in;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);font-weight:700}
+  .screen-note{position:fixed;left:16px;bottom:16px;background:#fff;border:1px solid #E3D9C2;border-left:5px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--ink2);max-width:420px;line-height:1.45;box-shadow:0 6px 18px rgba(31,42,46,.12)}
+  @media print{html,body{background:#fff}body{padding:0}.poster{box-shadow:none;transform:none!important}.screen-note{display:none}}
+</style>
+</head>
+<body>
+<!-- STAFF-ROOM POSTER. Prints 24x36 at FedEx Office or any poster printer. 25 slots sized for the 4x6 review cards (print/review-cards.html). No words addressed to staff beyond the slot numbers and the five marks. If a LOBBY version is ever wanted, remove the marks: families must never see reviews paired with rewards. -->
+<div class="poster" id="poster">
+  <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully">
+  <h1>the review wall</h1>
+  <div class="sub">In our families' words, one card per review.</div>
+  <div class="grid" id="grid"></div>
+  <div class="foot">750 N Street · one card per review · when the wall is full the cards go in the book and we start again</div>
+</div>
+<div class="screen-note">Shown scaled to fit the screen. Prints at 24x36 (poster printer, matte or foam-mounted). Each dashed slot holds one 4x6 review card; the five outlined slots are the marks.</div>
+<script>
+(function(){
+  var marks={1:'coffee and pastries',3:'Starbucks run',5:'lunch',10:'catered lunch',25:'grand prize'};
+  var g=document.getElementById('grid');
+  for(var i=1;i<=25;i++){
+    var d=document.createElement('div'); d.className='slot'+(marks[i]?' m':'');
+    d.innerHTML='<div class="n">'+i+'</div><div class="star">★</div>'+(marks[i]?'<div class="mark">'+marks[i]+'</div>':'');
+    g.appendChild(d);
+  }
+  function fit(){var p=document.getElementById('poster');var avail=Math.min(window.innerWidth-48, 1100);var s=Math.min(1,avail/(24*96));p.style.transform='scale('+s+')';p.style.marginBottom=(-(1-s)*36*96)+'px';}
+  fit(); window.addEventListener('resize',fit);
+})();
+</script>
+</body>
+</html>
