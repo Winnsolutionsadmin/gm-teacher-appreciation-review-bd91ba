@@ -17,7 +17,7 @@
   .sheet{width:8.5in;height:11in;background:var(--paper);padding:.7in .6in .6in;display:flex;flex-direction:column;align-items:center;box-shadow:0 8px 30px rgba(31,42,46,.18);position:relative}
   .wordmark{width:2in;height:auto;margin-bottom:.2in}
   h1{font-family:'Caveat',cursive;font-weight:600;font-size:46px;color:var(--teal-deep);line-height:1;margin-bottom:.15in}
-  svg{width:7.1in;height:auto;display:block}
+  svg{width:7.3in;height:auto;display:block}
   .foot{position:absolute;bottom:.4in;left:0;right:0;text-align:center;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);font-weight:700}
   @media print{html,body{background:#fff}body{padding:0}.sheet{box-shadow:none}}
   @media (max-width:900px){.sheet{width:100%;height:auto;padding:6vw}svg{width:100%}.foot{position:static;margin-top:6vw}}
@@ -28,7 +28,7 @@
 <main class="sheet">
   <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully">
   <h1>the star board</h1>
-  <svg viewBox="0 0 720 560" role="img" aria-label="Twenty-five outline stars arranged in a pyramid, rows of 1, 3, 5, 7 and 9, with marks at stars 1, 3, 5, 10 and 25">
+  <svg viewBox="0 0 720 700" role="img" aria-label="Twenty-five outline stars arranged in a pyramid, rows of 1, 3, 5, 7 and 9, with marks at stars 1, 3, 5, 10 and 25">
     <defs>
       <path id="st" d="M0 -30 L8.8 -9.3 L31.5 -9.3 L13.1 4.3 L19.9 26 L0 13 L-19.9 26 L-13.1 4.3 L-31.5 -9.3 L-8.8 -9.3 Z"/>
     </defs>
@@ -40,7 +40,7 @@
 <script>
 (function(){
   // pyramid rows top to bottom: 1,3,5,7,9 = 25. Numbering runs top-down so star 1 sits at the peak.
-  var rows=[1,3,5,7,9], gap=72, rowH=100, top=48, cx=360, n=0;
+  var rows=[1,3,5,7,9], gap=76, rowH=128, top=52, cx=360, n=0;
   var g=document.getElementById('stars'), m=document.getElementById('marks');
   var marks={1:'coffee',3:'Starbucks',5:'lunch',10:'catered',25:'grand prize'};
   rows.forEach(function(count,ri){
