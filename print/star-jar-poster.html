@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Star jar poster, 18x24, 25 star spots · Growing Mindfully</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600&family=Manrope:wght@500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  @page{size:18in 24in;margin:0}
+  :root{--paper:#FBF7EE;--ink:#1F2A2E;--ink2:#3F5359;--ink3:#6F7F84;--teal-deep:#3D8189;--gold:#C9A86A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#d9d3c4}
+  body{font-family:'Manrope',sans-serif;color:var(--ink);display:flex;justify-content:center;padding:24px}
+  .poster{width:18in;height:24in;background:var(--paper);padding:.8in 1in .7in;display:flex;flex-direction:column;align-items:center;position:relative;box-shadow:0 10px 40px rgba(31,42,46,.2);transform-origin:top center}
+  .wordmark{width:4in;height:auto;margin-bottom:.12in}
+  h1{font-family:'Caveat',cursive;font-weight:600;font-size:1.15in;color:var(--teal-deep);line-height:1;margin-bottom:.15in}
+  svg.jar{width:15.5in;height:auto;display:block}
+  .foot{position:absolute;bottom:.35in;left:0;right:0;text-align:center;font-size:.2in;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);font-weight:700}
+  .screen-note{position:fixed;left:16px;bottom:16px;background:#fff;border:1px solid #E3D9C2;border-left:5px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--ink2);max-width:420px;line-height:1.45;box-shadow:0 6px 18px rgba(31,42,46,.12)}
+  @media print{html,body{background:#fff}body{padding:0}.poster{box-shadow:none;transform:none!important}.screen-note{display:none}}
+</style>
+</head>
+<body>
+<!-- STAFF-ROOM POSTER (physical). 18x24. A big jar with 25 star spots inside; one gold star sticker (or color it in) per review; the five marks on the side of the jar. No words addressed to staff beyond the numbers and marks. -->
+<div class="poster" id="poster">
+  <img class="wordmark" src="../assets/wordmark.png" alt="Growing Mindfully">
+  <h1>the star jar</h1>
+  <svg class="jar" viewBox="0 0 1000 1180" role="img" aria-label="A large jar outline with twenty-five numbered star spots inside and five marks on the side">
+    <defs><path id="st" d="M0 -34 L10 -10.5 L35.7 -10.5 L14.9 4.9 L22.6 29.5 L0 14.7 L-22.6 29.5 L-14.9 4.9 L-35.7 -10.5 L-10 -10.5 Z"/></defs>
+    <!-- lid -->
+    <rect x="300" y="40" width="400" height="70" rx="16" fill="#B9AE93"/>
+    <rect x="270" y="100" width="460" height="56" rx="12" fill="#CFC5A8"/>
+    <!-- glass -->
+    <path d="M280 180 Q230 180 230 230 V1060 Q230 1130 300 1130 H700 Q770 1130 770 1060 V230 Q770 180 720 180 Z" fill="#fff" stroke="#D8D0BC" stroke-width="6"/>
+    <path d="M300 250 Q285 620 300 1020" stroke="#fff" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <g id="spots" fill="#fff" stroke="#C9A86A" stroke-width="4" stroke-linejoin="round"></g>
+    <g id="nums" font-family="Manrope,sans-serif" font-size="20" font-weight="700" fill="#9AA6AA" text-anchor="middle"></g>
+    <!-- marks on the right of the jar -->
+    <g id="marks" font-family="Caveat,cursive" font-size="40" font-weight="600" fill="#3D8189"></g>
+  </svg>
+  <div class="foot">750 N Street · one star per review</div>
+</div>
+<div class="screen-note">Shown scaled to fit the screen. Prints at 18x24. One gold star sticker per review on the numbered spots (bottom up); the five outlined spots are the marks.</div>
+<script>
+(function(){
+  var marks={1:'coffee and pastries',3:'Starbucks run',5:'lunch',10:'catered lunch',25:'grand prize'};
+  var g=document.getElementById('spots'), nm=document.getElementById('nums'), mk=document.getElementById('marks');
+  // 5 rows x 5, bottom-up, inside the jar body (x 300-700, y 260-1080), hand-jittered
+  var n=0, rows=5, cols=5, x0=340, dx=80, yBottom=1030, dy=165;
+  for(var r=0;r<rows;r++){ for(var c=0;c<cols;c++){ n++;
+    var x=x0+c*dx+((r%2)?20:0)+((r*7+c*13)%21-10), y=yBottom-r*dy-((r*5+c*3)%17-8), rot=((r*31+c*17)%36)-18;
+    var u=document.createElementNS('http://www.w3.org/2000/svg','use'); u.setAttribute('href','#st'); u.setAttribute('transform','translate('+x+' '+y+') rotate('+rot+')');
+    if(marks[n]){u.setAttribute('stroke','#3D8189');u.setAttribute('stroke-width','6');}
+    g.appendChild(u);
+    var t=document.createElementNS('http://www.w3.org/2000/svg','text'); t.setAttribute('x',x); t.setAttribute('y',y+7); t.setAttribute('fill',marks[n]?'#3D8189':'#B5BEC1'); t.textContent=n; nm.appendChild(t);
+    if(marks[n]){ var ln=document.createElementNS('http://www.w3.org/2000/svg','line'); ln.setAttribute('x1',780); ln.setAttribute('x2',805); ln.setAttribute('y1',y); ln.setAttribute('y2',y); ln.setAttribute('stroke','#C9A86A'); ln.setAttribute('stroke-width','5'); mk.appendChild(ln);
+      var mt=document.createElementNS('http://www.w3.org/2000/svg','text'); mt.setAttribute('x',815); mt.setAttribute('y',y+13); mt.textContent=n+' · '+marks[n]; mk.appendChild(mt); }
+  }}
+  function fit(){var p=document.getElementById('poster');var avail=Math.min(window.innerWidth-48, 1000);var s=Math.min(1,avail/(18*96));p.style.transform='scale('+s+')';p.style.marginBottom=(-(1-s)*24*96)+'px';}
+  fit(); window.addEventListener('resize',fit);
+})();
+</script>
+</body>
+</html>
