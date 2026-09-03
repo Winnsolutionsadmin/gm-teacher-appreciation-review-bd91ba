@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Story cards (print, 4-up on letter) · Growing Mindfully</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Manrope:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  @page{size:letter portrait;margin:0}
+  :root{--paper:#FBF7EE;--paper2:#F0E9D8;--ink:#1F2A2E;--ink2:#3F5359;--ink3:#6F7F84;--teal-deep:#3D8189;--sage-deep:#6F8F70;--gold:#C9A86A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#d9d3c4}
+  body{font-family:'Manrope',sans-serif;color:var(--ink);display:flex;justify-content:center;padding:24px}
+  .sheet{width:8.5in;height:11in;background:#fff;padding:.5in .5in;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.25in;box-shadow:0 8px 30px rgba(31,42,46,.18)}
+  .card{border:1px dashed #C9C2B0;padding:.32in .34in .28in;display:flex;flex-direction:column;background:var(--paper);position:relative}
+  .card img{width:1.45in;height:auto;margin-bottom:.14in}
+  .card h2{font-family:'Newsreader',serif;font-weight:600;font-size:17px;line-height:1.2;margin-bottom:.06in}
+  .card h2 em{font-family:'Caveat',cursive;font-style:normal;color:var(--teal-deep);font-size:21px}
+  .lines{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:.235in;margin:.1in 0 .16in}
+  .lines i{display:block;border-bottom:1px solid #D8D0BC;height:0}
+  .hold{font-size:9.5px;line-height:1.55;color:var(--ink2)}
+  .hold b{color:var(--ink)}
+  .opt{display:flex;gap:.12in;flex-wrap:wrap;margin:.05in 0 .06in}
+  .opt span{display:inline-flex;align-items:center;gap:4px}
+  .opt span::before{content:"";width:9px;height:9px;border:1px solid var(--ink2);border-radius:2px;display:inline-block}
+  .name{font-size:9.5px;color:var(--ink2);margin-top:.05in}
+  .name u{text-decoration:none;border-bottom:1px solid var(--ink2);display:inline-block;width:1.8in;height:10px;vertical-align:bottom}
+  @media print{html,body{background:#fff}body{padding:0}.sheet{box-shadow:none}}
+  @media (max-width:900px){.sheet{width:100%;height:auto;grid-template-columns:1fr;grid-template-rows:none;padding:5vw;gap:5vw}.card{min-height:60vw}}
+</style>
+</head>
+<body>
+<!-- FAMILY-FACING. STAGED (Tier 2). Print on card stock, cut on the dashed lines. No link, no QR, no mention of reviews. -->
+<main class="sheet">
+  <section class="card"><img src="../assets/wordmark.png" alt="Growing Mindfully"><h2>A moment that <em>stayed with us</em></h2><div class="lines"><i></i><i></i><i></i><i></i><i></i></div><div class="hold"><b>How may we hold this?</b><div class="opt"><span>Just for the team</span><span>Story wall, no names</span><span>Our website, with our name</span></div>Leaving it blank means just for the team.<div class="name">Family (optional) <u></u></div></div></section>
+  <section class="card"><img src="../assets/wordmark.png" alt="Growing Mindfully"><h2>A moment that <em>stayed with us</em></h2><div class="lines"><i></i><i></i><i></i><i></i><i></i></div><div class="hold"><b>How may we hold this?</b><div class="opt"><span>Just for the team</span><span>Story wall, no names</span><span>Our website, with our name</span></div>Leaving it blank means just for the team.<div class="name">Family (optional) <u></u></div></div></section>
+  <section class="card"><img src="../assets/wordmark.png" alt="Growing Mindfully"><h2>A moment that <em>stayed with us</em></h2><div class="lines"><i></i><i></i><i></i><i></i><i></i></div><div class="hold"><b>How may we hold this?</b><div class="opt"><span>Just for the team</span><span>Story wall, no names</span><span>Our website, with our name</span></div>Leaving it blank means just for the team.<div class="name">Family (optional) <u></u></div></div></section>
+  <section class="card"><img src="../assets/wordmark.png" alt="Growing Mindfully"><h2>A moment that <em>stayed with us</em></h2><div class="lines"><i></i><i></i><i></i><i></i><i></i></div><div class="hold"><b>How may we hold this?</b><div class="opt"><span>Just for the team</span><span>Story wall, no names</span><span>Our website, with our name</span></div>Leaving it blank means just for the team.<div class="name">Family (optional) <u></u></div></div></section>
+</main>
+</body>
+</html>
